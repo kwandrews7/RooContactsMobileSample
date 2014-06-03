@@ -11,12 +11,6 @@ var allContactsWindow = Titanium.UI.createWindow({
     url:'allContacts.js'
 });
 
-// add listener to update windows on focus
-allContactsWindow.addEventListener('focus', function(e) {
-	Ti.API.info("Fired focus event.");
-   // allContactsWindow.fireEvent('refreshWindow',{});
-});
-
 // create all contacts tab
 var allContactsTab = Titanium.UI.createTab({  
     icon:'KS_nav_views.png',

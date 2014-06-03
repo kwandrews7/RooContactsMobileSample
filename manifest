@@ -1,8 +1,8 @@
-#appname: newHelloWorld
-#publisher: kyleandrews
-#url: http://andrewshotspot.com
-#image: appicon.png
-#appid: com.andrewshotspot.newHelloWorld
-#desc: undefined
-#type: ipad
-#guid: 8e9d7aff-de51-4a92-9b6e-1e8d85df7ddf
+#appname:newHelloWorld
+#publisher:kyleandrews
+#url:http://www.credera.com
+#image:appicon.png
+#appid:com.credera.rooContactsSample
+#desc:Sample application to work with Spring Roo contacts web app.
+#type:ipad
+#guid:8e9d7aff-de51-4a92-9b6e-1e8d85df7ddf

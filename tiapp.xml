@@ -6,13 +6,13 @@
     <property name="acs-oauth-secret-development" type="string">vYQkQcsgifSwNDLWsQZSsMzdOluzSJlB</property>
     <property name="acs-oauth-key-development" type="string">4tHqgOnd9NbuCuVQtLG5DeoQtMFoRmoF</property>
     <property name="acs-api-key-development" type="string">tWWQuH8IhqkuMmlkDNFUUphI8UV0FgF1</property>
-    <id>com.andrewshotspot.newHelloWorld</id>
+    <id>com.credera.rooContactsSample</id>
     <name>newHelloWorld</name>
     <version>1.0</version>
     <publisher>kyleandrews</publisher>
-    <url>http://andrewshotspot.com</url>
-    <description>not specified</description>
-    <copyright>2014 by kyleandrews</copyright>
+    <url>http://www.credera.com</url>
+    <description>Sample application to work with Spring Roo contacts web app.</description>
+    <copyright>2014 by Kyle Andrews</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>

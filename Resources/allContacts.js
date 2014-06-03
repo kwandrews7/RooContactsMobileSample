@@ -1,5 +1,6 @@
 // create variable "win" to refer to current window
 var win = Titanium.UI.currentWindow;
+var tableView;
 
 // Function loadContacts() 
 function loadContacts() {
@@ -11,7 +12,7 @@ function loadContacts() {
 	var loader = Titanium.Network.createHTTPClient();
 	// set http request method and url
 	loader.setRequestHeader("Accept", "application/json");
-	loader.open("GET", "http://localhost:8080/contactsample/contacts");
+	loader.open("GET", "http://localhost:8080/roocontactssample/contacts");
 	// run the function when the data is ready for us to process
 	loader.onload = function(){
 		
@@ -20,12 +21,22 @@ function loadContacts() {
 		// evaluate json
 		var contacts = JSON.parse(this.responseText);
 		
+		// sort contacts by name
+		contacts.sort(function (a, b) {
+		    if (a.name > b.name)
+		      return 1;
+		    if (a.name < b.name)
+		      return -1;
+		    // a must be equal to b
+		    return 0;
+		});
+
 		for(var i=0; i < contacts.length; i++) {
 			
 			var id = contacts[i].id;
 			Ti.API.debug("JSON Data, Row[" + i + "], ID: " + contacts[i].id);
 			var name = contacts[i].name;
-			Ti.API.info("JSON Data, Row[" + i + "], Name: " + contacts[i].name);
+			Ti.API.debug("JSON Data, Row[" + i + "], Name: " + contacts[i].name);
 			var phone = contacts[i].phone;
 			Ti.API.debug("JSON Data, Row[" + i + "], Phone: " + contacts[i].phone);
 			var address = contacts[i].address;
@@ -82,7 +93,7 @@ function loadContacts() {
 		}
 		
 		// create table view
-		var tableView = Titanium.UI.createTableView( { data: rowData });
+		tableView = Titanium.UI.createTableView( { data: rowData });
 		win.add(tableView);
 	};
 	
@@ -91,9 +102,9 @@ function loadContacts() {
 	
 }
 
-function refreshWindow() {
-	Ti.API.info("Attempting refresh of All Contacts TableView.");
-}
+// add listener to update windows on focus
+win.addEventListener('focus', function(e) {
+	Ti.API.info("Fired focus event.");
+	loadContacts();
+});
 
-// get contacts
-loadContacts();

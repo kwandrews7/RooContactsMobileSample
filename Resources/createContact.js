@@ -30,7 +30,7 @@ function postForm(name, address, phone) {
 	var client = Titanium.Network.createHTTPClient();
 
 	client.setTimeout(5000);	 
-	client.open('POST','http://localhost:8080/contactsample/contacts/');
+	client.open('POST','http://localhost:8080/roocontactssample/contacts/');
 	client.setRequestHeader( 'Content-type','application/json');
 	
 	client.onreadystatechange = function() {
@@ -45,7 +45,7 @@ function postForm(name, address, phone) {
 	
 	var params = {
 	  'name':name,
-	  'address:':address,
+	  'address':address,
 	  'phone':phone
 	};
 	
