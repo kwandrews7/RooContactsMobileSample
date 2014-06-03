@@ -23,13 +23,13 @@ function loadContacts() {
 		for(var i=0; i < contacts.length; i++) {
 			
 			var id = contacts[i].id;
-			Ti.API.info("JSON Data, Row[" + i + "], ID: " + contacts[i].id);
+			Ti.API.debug("JSON Data, Row[" + i + "], ID: " + contacts[i].id);
 			var name = contacts[i].name;
 			Ti.API.info("JSON Data, Row[" + i + "], Name: " + contacts[i].name);
 			var phone = contacts[i].phone;
-			Ti.API.info("JSON Data, Row[" + i + "], Phone: " + contacts[i].phone);
+			Ti.API.debug("JSON Data, Row[" + i + "], Phone: " + contacts[i].phone);
 			var address = contacts[i].address;
-			Ti.API.info("JSON Data, Row[" + i + "], Address: " + contacts[i].address);
+			Ti.API.debug("JSON Data, Row[" + i + "], Address: " + contacts[i].address);
 			
 			// create row
 			var row = Titanium.UI.createTableViewRow({ height:Ti.UI.SIZE });
